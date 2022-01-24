@@ -18,7 +18,7 @@ function HorseLight(props) {
             const actualWidth = parseInt(mainRef.current.clientWidth);
             setActualWidth(actualWidth);
         }
-    }, [width])
+    }, [mainRef.current])
 
     const render = useMemo(() => {
         if (actualWidth === undefined || actualWidth === null) {
