@@ -3,7 +3,7 @@ import { getSplitArray, setInterval2, getNextIndex, DIRECTION, MILLISEC } from "
 
 export default function Right(props) {
 
-    const { data, perWidth, displayCount, delayTime, scroll, height,space } = props;
+    const { data, perWidth, displayCount, delayTime, scroll, height, space } = props;
 
     const { speed, step } = scroll;
 
@@ -51,16 +51,16 @@ export default function Right(props) {
 
     const render = useMemo(() => {
         const showArray = getSplitArray(data, index, step, DIRECTION.RIGHT, displayCount);
-        console.log("11",showArray)
         return (
             showArray.map((item, idx) => {
                 return (
                     <div
                         key={idx}
                         style={{ width: perWidth, height: height }}
+                        className="item-container"
                     >
                         <div
-                            className="item"
+                            className="item-content"
                             style={{ marginRight: space + "px" }}
                         >
                             {item}

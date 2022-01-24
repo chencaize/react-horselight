@@ -12,9 +12,10 @@ export default function Normal(props) {
                         <div
                             key={idx}
                             style={{ width: perWidth, height: height }}
+                            className="item-container"
                         >
                             <div
-                                className="item"
+                                className="item-content"
                                 style={{ marginRight: space + "px" }}
                             >
                                 {item}

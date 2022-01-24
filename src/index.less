@@ -1,14 +1,19 @@
 .HorseLight {
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 
     .content {
-        position: absolute;
-        display : inline-flex;
+        position   : absolute;
+        white-space: nowrap;
 
-        .item {
-            height  : 100%;
-            overflow: hidden;
+        .item-container {
+            display: inline-block;
+            height : 100%;
+
+            .item-content {
+                overflow: hidden;
+                height  : 100%;
+            }
         }
     }
 }

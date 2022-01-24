@@ -28,7 +28,7 @@ function App(props) {
 
     const [className, setClassName] = useState("a");
     const [data, setData] = useState(getDatas(arrayLength, mode))
-    const [direction, setDirection] = useState("right");
+    const [direction, setDirection] = useState("left");
     const [delayTime, setDelayTime] = useState(1000);
     const [height, setHeight] = useState(50);
     const [width, setWidth] = useState(600);
