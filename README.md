@@ -1,4 +1,4 @@
-# react-horse-light
+# react-horselight
 
 a react component , display the data like a horse light.
 
@@ -9,9 +9,9 @@ a react component , display the data like a horse light.
 # Installation
 
 ```
-npm install react-horse-light
+npm install react-horselight
 #or
-yarn add react-horse-light
+yarn add react-horselight
 ```
 
 # API
@@ -22,7 +22,7 @@ yarn add react-horse-light
 | space | the space of two element  | number | 10 |
 | direction | the elements' move direction  | string | "left" |
 | delayTime | interval exection time(ms)  | number | 5000 |
-| height | -  | string/number | "100%" |
+| height | -  | string/number | 30 |
 | width | -  | string/number | "100%" |
 | displayCount | count of display elements  | number | 4 |
 | scroll | -  | Scroll | - |
@@ -38,7 +38,7 @@ Scroll:
 ```js
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import HorseLight from "../src";
+import HorseLight from "react-horselight";
 import "./index.less";
 
 function getData(data, mode) {
@@ -160,3 +160,7 @@ function App(props) {
 
 ReactDOM.render(<App />, document.getElementById("app"));
 ```
+
+# update
+1.0.0 
+1. 初始化版本

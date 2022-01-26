@@ -1,5 +1,6 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const baseConfig = require('./webpack.base.js');
 
 const prodConfig = {
@@ -25,6 +26,9 @@ const prodConfig = {
             amd: "react-dom"
         }
     },
+    plugins: [
+        new CleanWebpackPlugin()
+    ],
 };
 
 module.exports = merge(prodConfig, baseConfig);

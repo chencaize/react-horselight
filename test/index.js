@@ -28,12 +28,12 @@ function App(props) {
 
     const [className, setClassName] = useState("a");
     const [data, setData] = useState(getDatas(arrayLength, mode))
-    const [direction, setDirection] = useState("left");
-    const [delayTime, setDelayTime] = useState(1000);
+    const [direction, setDirection] = useState("right");
+    const [delayTime, setDelayTime] = useState(2000);
     const [height, setHeight] = useState(50);
-    const [width, setWidth] = useState(600);
+    const [width, setWidth] = useState("100%");
     const [displayCount, setDisplayCount] = useState(4);
-    const [scroll, setScroll] = useState({ speed: 400, step: 1 });
+    const [scroll, setScroll] = useState({ speed: 1000, step: 3 });
     const [space, setSpace] = useState(5);
 
     const changeClassName = () => {

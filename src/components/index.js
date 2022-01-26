@@ -1,5 +1,4 @@
-import Left from "./Left.jsx";
-import Right from "./Right.jsx";
 import Normal from "./Normal.jsx";
+import Horizontal from "./Horizontal.jsx";
 
-export { Left, Right, Normal };
+export { Normal, Horizontal };
