@@ -4,7 +4,7 @@ import { MILLISEC, DIRECTION, DEFAULT_SPEED, DEFAULT_STEP } from "../utils/Globa
 
 export default function Horizontal(props) {
 
-    const { direction, data, perWidth, displayCount, delayTime, scroll, height, space } = props;
+    const { debug, direction, data, perWidth, displayCount, delayTime, scroll, height, space } = props;
 
     const { speed = DEFAULT_SPEED, step = DEFAULT_STEP } = scroll;
 
@@ -18,14 +18,13 @@ export default function Horizontal(props) {
     }, [perWidth, data, delayTime, scroll.speed, scroll.step, direction])
 
     const updateIndex = () => {
-        setIndex(idx => getNextIndex(data, idx, step, direction));
+        setIndex(idx => getNextIndex(data, idx, step, direction, debug));
     }
 
     const move = () => {
         const runCount = Math.round(speed / MILLISEC);
         const perMove = Math.round(perWidth * step / runCount);
         const dom = domRef.current;
-
         switch (direction) {
             case DIRECTION.LEFT:
                 dom.style.left = "";
@@ -75,7 +74,7 @@ export default function Horizontal(props) {
     }
 
     const render = useMemo(() => {
-        const showArray = getSplitArray(data, index, step, direction, displayCount);
+        const showArray = getSplitArray(data, index, step, direction, displayCount, debug);
         return (
             showArray.map((item, idx) => {
                 return (

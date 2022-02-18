@@ -26,6 +26,7 @@ yarn add react-horselight
 | width | -  | string/number | "100%" |
 | displayCount | count of display elements  | number | 4 |
 | scroll | -  | Scroll | - |
+| debug | show debug logs  | boolean | false |
 
 Scroll:
 | Property | Description | Type | Default |
@@ -164,3 +165,6 @@ ReactDOM.render(<App />, document.getElementById("app"));
 # update
 1.0.0 
 1. 初始化版本
+
+1.0.2/3/4
+1. 增加debug

@@ -1,9 +1,14 @@
 import { DIRECTION } from "./GlobalVir";
 
-function getSplitArray(array, index, moveStep, direction, windowCount) {
+function getSplitArray(array, index, moveStep, direction, windowCount, debug) {
     let result = [];
 
-    if (!array) return result;
+    if (debug === true) console.debug("[getSplitArray] params:", array, index, moveStep, direction, windowCount);
+
+    if (!array) {
+        if (debug === true) console.debug("[getSplitArray] array is undefined");
+        return result;
+    }
 
     let arrayLength = array.length;
 
@@ -29,12 +34,19 @@ function getSplitArray(array, index, moveStep, direction, windowCount) {
         }
     }
 
+    if (debug === true) console.debug("[getSplitArray] result:", result);
     return result;
 }
 
-function getNextIndex(array, index, moveStep, direction) {
+function getNextIndex(array, index, moveStep, direction, debug) {
 
-    if (!array) return index;
+    if (debug === true) console.debug("[getNextIndex] params:", array, index, moveStep, direction);
+
+
+    if (!array) {
+        if (debug === true) console.debug("[getNextIndex] array is undefined");
+        return index;
+    }
 
     let result = index;
     let arrayLength = array.length;
@@ -47,6 +59,7 @@ function getNextIndex(array, index, moveStep, direction) {
         while (result < 0) result += arrayLength;
     }
 
+    if (debug === true) console.debug("[getNextIndex] result:", result);
     return result;
 }
 

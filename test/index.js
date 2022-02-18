@@ -114,6 +114,7 @@ function App(props) {
                 displayCount={displayCount}
                 scroll={scroll}
                 space={space}
+                debug={true}
             >
             </HorseLight>
         </div >

@@ -20,7 +20,9 @@ import "./index.less";
 
 function HorseLight(props) {
 
-    const { className, data, space, direction, height, width, displayCount, delayTime, scroll } = props;
+    const { debug, className, data, space, direction, height, width, displayCount, delayTime, scroll } = props;
+
+    if (debug === true) console.debug("[HorseLight]", props);
 
     const mainRef = useRef(null);
     const size = useSize(mainRef);
@@ -31,11 +33,14 @@ function HorseLight(props) {
             return <div></div>
         }
         const perWidth = parseInt(actualWidth / displayCount);//every display item's width
+
         if (data.length <= displayCount) {
-            return <Normal data={data} perWidth={perWidth} height={height} space={space}></Normal>
+            if (debug === true) console.debug("[HorseLight] render:normal,perWidth-",perWidth);
+            return <Normal data={data} perWidth={perWidth} height={height} space={space} debug={debug}></Normal>
         } else {
+            if (debug === true) console.debug("[HorseLight] render:",direction,"perWidth-",perWidth);
             if (direction === DIRECTION.LEFT || direction === DIRECTION.RIGHT) {
-                return <Horizontal direction={direction} data={data} perWidth={perWidth} scroll={scroll} displayCount={displayCount} delayTime={delayTime} height={height} space={space}></Horizontal>
+                return <Horizontal direction={direction} data={data} perWidth={perWidth} scroll={scroll} displayCount={displayCount} delayTime={delayTime} height={height} space={space} debug={debug}></Horizontal>
             }
         }
     }, [direction, space, size, displayCount, delayTime, data, scroll.speed, scroll.step, height])
@@ -52,6 +57,7 @@ function HorseLight(props) {
 }
 
 HorseLight.propTypes = {
+    debug: propTypes.bool,
     className: propTypes.string,
     data: propTypes.array,
     space: propTypes.number,
@@ -67,6 +73,7 @@ HorseLight.propTypes = {
 }
 
 HorseLight.defaultProps = {
+    debug: false,
     className: DEFAULT_CLASSNAME,
     data: DEFAULT_DATA,
     space: DEFAULT_SPACE,

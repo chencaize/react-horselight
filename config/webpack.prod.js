@@ -1,6 +1,8 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { BannerPlugin } = require("webpack");
+const { name, version, author } = require("../package.json");
 const baseConfig = require('./webpack.base.js');
 
 const prodConfig = {
@@ -27,7 +29,10 @@ const prodConfig = {
         }
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new BannerPlugin({
+            banner: `name:${name}\nversion:${version}\nauthor:${author}`
+        })
     ],
 };
 
